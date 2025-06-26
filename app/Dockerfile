@@ -1,5 +1,4 @@
-FROM nginx
-RUN mkdir -p /var/cache/nginx/client_temp && \
-    chmod -R 777 /var/cache/nginx
-COPY index.html /usr/share/nginx/html/index.html
+FROM registry.access.redhat.com/ubi8/nginx-120
+
+COPY index.html /opt/app-root/src/index.html
 EXPOSE 8080
